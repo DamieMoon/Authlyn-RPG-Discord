@@ -1,0 +1,13 @@
+{
+  "id":"001",
+  "name": "Damien Moon",
+  "race": "Human",
+  "items": [
+    "003",
+    "004"
+  ],
+  "lines": [
+    "Kandrina can code better than me",
+    "It's Davskas fault"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "002",
+  "name": "Outer Fields",
+  "description": "A mysterious place home to a variety of creatures and animals that grow without any intervention.",
+  "level": 1,
+  "npcs": [
+
+  ],
+  "monsters":[
+
+  ],
+  "resources":[
+
+  ],
+  "routes": [
+
+  ]
+}

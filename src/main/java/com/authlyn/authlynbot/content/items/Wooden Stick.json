@@ -1,0 +1,10 @@
+{
+  "id": "001",
+  "type": "weapon",
+  "name": "Wooden Stick",
+  "baseDamage": 5,
+  "description": "Found almost everywhere on the ground.",
+  "buyable": true,
+  "level": 1,
+  "value": 2
+}

@@ -1,0 +1,10 @@
+{
+  "id": "004",
+  "type": "consumable",
+  "name": "Blue Potion",
+  "recovery": 15,
+  "description": "A weak brew that has a slight healing property if consumed.",
+  "buyable": true,
+  "level": 5,
+  "value": 15
+}

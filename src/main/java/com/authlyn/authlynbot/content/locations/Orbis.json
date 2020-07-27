@@ -1,0 +1,18 @@
+{
+  "id": "001",
+  "name": "Orbis",
+  "level": 1,
+  "description": "A medieval town home to the ponies and the Apple Family.",
+  "npcs": [
+    "001"
+  ],
+  "monsters":[
+
+  ],
+  "resources":[
+
+  ],
+  "routes": [
+
+  ]
+}

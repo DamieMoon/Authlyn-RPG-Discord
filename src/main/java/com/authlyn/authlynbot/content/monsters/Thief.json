@@ -1,0 +1,9 @@
+{
+  "id": "001",
+  "name": "Thief",
+  "level": 1,
+  "base_attack": 10,
+  "base_defense": 10,
+  "hp": 10,
+  "base_xp": 5
+}

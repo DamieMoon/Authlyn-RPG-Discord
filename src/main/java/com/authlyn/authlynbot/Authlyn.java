@@ -20,9 +20,12 @@ public class Authlyn {
     	
     	// Test stuff to see if the database installation works
     	Database.installDatabase();
-    	Database.testDatabase();
+        Database.insert_items();
+        Database.insert_locations();
+        Database.insert_npcs();
+        Database.insert_monsters();
     	
-        JDABuilder.createLight("insert token here Kandrina", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+        JDABuilder.createLight("NzI3OTI3MTkxMTUyNjIzNzM2.Xvy9Bg.4JGXVZ0ellQ0TDdo7ZKHhgmiuEk", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
         .addEventListeners(new GuildMessageReceivedListener())
         .setActivity(Activity.playing("Type !ping"))
         .build();

@@ -1,0 +1,10 @@
+{
+  "id": "002",
+  "type": "weapon",
+  "name": "Shadows",
+  "baseDamage": 500,
+  "description": "Also found almost everywhere, but can be manipulated by Night Blue into physical shapes.",
+  "buyable": false,
+  "level": 1,
+  "value": 0
+}
