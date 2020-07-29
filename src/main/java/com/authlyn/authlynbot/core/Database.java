@@ -26,7 +26,7 @@ public class Database {
 		//insert_locations();
 		//insert_npcs();
 		//insert_monsters();
-		getTheNPC("001");
+		//getTheNPC("001");
 	}
 	
 	// RethinkDB Object
@@ -191,7 +191,7 @@ public class Database {
 	}
 
 	// Fetches a specific NPC
-	public static HashMap getTheNPC(String npc) {
+	public static HashMap getNPC(String npc) {
 		Cursor<HashMap> testCursor;
 		if(Pattern.matches("[0-9]*",npc)){
 			System.out.println("ID");
@@ -211,4 +211,7 @@ public class Database {
 		}
 		return npcMap;
 	}
+
+
+
 }
