@@ -5,24 +5,27 @@ import java.io.FileReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.rethinkdb.RethinkDB;
 import com.rethinkdb.net.Connection;
 
 import com.authlyn.authlynbot.Globals;
+import com.rethinkdb.net.Cursor;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Database {
-	
+
 	public static void main(String[] args) {
 		//testDatabase();
-		installDatabase();
-		insert_items();
-		insert_locations();
-		insert_npcs();
-		insert_monsters();
+		//installDatabase();
+		//insert_items();
+		//insert_locations();
+		//insert_npcs();
+		//insert_monsters();
+		getTheNPC("Damien Moon");
 	}
 	
 	// RethinkDB Object
@@ -183,6 +186,16 @@ public class Database {
 			}catch (Exception e){
 				System.out.println("Uh Oh");
 			}
+		}
+	}
+
+	// Fetches a specific NPC
+	public static void getTheNPC(String npcName) {
+		Cursor testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name", npcName)).run(conn);
+		List iDontKnow = testCursor.toList();
+
+		for (Object doc : testCursor) {
+			System.out.println(doc);
 		}
 	}
 
