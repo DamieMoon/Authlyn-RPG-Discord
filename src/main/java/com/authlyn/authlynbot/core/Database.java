@@ -83,7 +83,7 @@ public class Database {
 
 	public static void insert_items(){
 		r.db("authlyn").table("items").delete().run(conn);
-		File items_directoryPath = new File(Globals.wdir + "\\content\\items");
+		File items_directoryPath = new File(Globals.wdir + "/content/items");
 		File item_Files_List[] = items_directoryPath.listFiles();
 		for(File file : item_Files_List){
 			JSONParser parser = new JSONParser();
@@ -120,7 +120,7 @@ public class Database {
 
 	public static void insert_locations(){
 		r.db("authlyn").table("locations").delete().run(conn);
-		File locations_directoryPath = new File(Globals.wdir + "\\content\\locations");
+		File locations_directoryPath = new File(Globals.wdir + "/content/locations");
 		File location_Files_List[] = locations_directoryPath.listFiles();
 		for(File file : location_Files_List){
 			JSONParser parser = new JSONParser();
@@ -144,7 +144,7 @@ public class Database {
 
 	public static void insert_npcs(){
 		r.db("authlyn").table("npcs").delete().run(conn);
-		File npcs_directoryPath = new File(Globals.wdir + "\\content\\npcs");
+		File npcs_directoryPath = new File(Globals.wdir + "/content/npcs");
 		File npc_Files_List[] = npcs_directoryPath.listFiles();
 		for(File file : npc_Files_List){
 			JSONParser parser = new JSONParser();
@@ -165,7 +165,7 @@ public class Database {
 
 	public static void insert_monsters(){
 		r.db("authlyn").table("monsters").delete().run(conn);
-		File monsters_directoryPath = new File(Globals.wdir + "\\content\\monsters");
+		File monsters_directoryPath = new File(Globals.wdir + "/content/monsters");
 		File monster_Files_List[] = monsters_directoryPath.listFiles();
 		for(File file : monster_Files_List){
 			JSONParser parser = new JSONParser();

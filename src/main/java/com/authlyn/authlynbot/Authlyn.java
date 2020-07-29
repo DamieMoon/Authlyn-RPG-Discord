@@ -19,7 +19,6 @@ public class Authlyn {
     public static void main(String args[]) throws LoginException, InterruptedException {
     	
     	// Test stuff to see if the database installation works
-        Globals.setWdir();
     	Database.installDatabase();
         Database.insert_items();
         Database.insert_locations();
