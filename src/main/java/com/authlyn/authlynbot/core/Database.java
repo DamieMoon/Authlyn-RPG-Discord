@@ -190,13 +190,15 @@ public class Database {
 	}
 
 	// Fetches a specific NPC
-	public static void getTheNPC(String npcName) {
-		Cursor testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name", npcName)).run(conn);
-		List iDontKnow = testCursor.toList();
+	public static HashMap getTheNPC(String npcName) {
+		Cursor<HashMap> testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name",npcName)).run(conn);
 
-		for (Object doc : testCursor) {
-			System.out.println(doc);
+		HashMap npcMap = new HashMap();
+		for (HashMap npc : testCursor) {
+			npcMap = npc;
+			//System.out.println(npc.get("name"));
 		}
+		return npcMap;
 	}
 
 
