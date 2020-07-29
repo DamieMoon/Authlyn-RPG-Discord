@@ -34,7 +34,7 @@ public class Globals {
      }
 
     public static void main(String[] args) {
-
+        setWdir();
     }
 
 
