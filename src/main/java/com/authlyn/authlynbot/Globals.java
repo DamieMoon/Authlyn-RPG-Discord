@@ -25,16 +25,19 @@ public class Globals {
      public static void setWdir(){
         if(isWindows()){
             System.out.println(System.getProperty("user.dir"));
-            //wdir = System.getProperty("user.dir") + "\\src\\main\\java\\com\\authlyn\\authlynbot";
+            wdir = System.getProperty("user.dir") + "\\src\\main\\java\\com\\authlyn\\authlynbot";
         }else if(isLinux()){
             System.out.println(System.getProperty("user.dir"));
+            wdir = System.getProperty("user.dir") + "/src/main/java/com/authlyn/authlynbot";
+
         }else if(isMac()){
             System.out.println(System.getProperty("user.dir"));
+            wdir = System.getProperty("user.dir") + "/src/main/java/com/authlyn/authlynbot";
         }
      }
 
     public static void main(String[] args) {
-        setWdir();
+
     }
 
 
