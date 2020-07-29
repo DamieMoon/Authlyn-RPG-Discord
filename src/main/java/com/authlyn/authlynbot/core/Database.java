@@ -13,6 +13,7 @@ import com.rethinkdb.net.Connection;
 import com.authlyn.authlynbot.Globals;
 import com.rethinkdb.net.Cursor;
 import org.json.simple.JSONArray;
+import java.util.regex.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -25,7 +26,7 @@ public class Database {
 		//insert_locations();
 		//insert_npcs();
 		//insert_monsters();
-		getTheNPC("Damien Moon");
+		getTheNPC("001");
 	}
 	
 	// RethinkDB Object
@@ -190,16 +191,24 @@ public class Database {
 	}
 
 	// Fetches a specific NPC
-	public static HashMap getTheNPC(String npcName) {
-		Cursor<HashMap> testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name",npcName)).run(conn);
+	public static HashMap getTheNPC(String npc) {
+		Cursor<HashMap> testCursor;
+		if(Pattern.matches("[0-9]*",npc)){
+			System.out.println("ID");
+			testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("id",npc)).run(conn);
+
+		}else{
+			testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name",npc)).run(conn);
+		}
 
 		HashMap npcMap = new HashMap();
-		for (HashMap npc : testCursor) {
-			npcMap = npc;
-			//System.out.println(npc.get("name"));
+		System.out.println(testCursor.hasNext());
+		if(testCursor.hasNext()){
+			for (HashMap npcM : testCursor) {
+				npcMap = npcM;
+				System.out.println(npcMap.get("name"));
+			}
 		}
 		return npcMap;
 	}
-
-
 }
