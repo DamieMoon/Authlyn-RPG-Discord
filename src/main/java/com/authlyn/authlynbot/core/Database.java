@@ -2,6 +2,7 @@ package com.authlyn.authlynbot.core;
 
 import java.io.File;
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +27,7 @@ public class Database {
 		//insert_locations();
 		//insert_npcs();
 		//insert_monsters();
-		//getTheNPC("001");
+		getNPC("001");
 	}
 	
 	// RethinkDB Object
@@ -194,24 +195,21 @@ public class Database {
 	public static HashMap getNPC(String npc) {
 		Cursor<HashMap> testCursor;
 		if(Pattern.matches("[0-9]*",npc)){
-			System.out.println("ID");
 			testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("id",npc)).run(conn);
 
 		}else{
 			testCursor = r.db("authlyn").table("npcs").filter(r.hashMap("name",npc)).run(conn);
 		}
 
-		HashMap npcMap = new HashMap();
+		HashMap<String, List<String>> npcMap = new HashMap<>();
 		System.out.println(testCursor.hasNext());
 		if(testCursor.hasNext()){
 			for (HashMap npcM : testCursor) {
 				npcMap = npcM;
-				System.out.println(npcMap.get("name"));
+				System.out.println(npcMap.get("lines").get(0));
 			}
 		}
 		return npcMap;
 	}
-
-
 
 }
